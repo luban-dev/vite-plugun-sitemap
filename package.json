@@ -1,0 +1,43 @@
+{
+  "name": "@luban-ui/vite-plugun-sitemap",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Generate sitemap for vite site",
+  "author": "Season Chen season.chen.i@foxmail.com> (https://github.com/ccqgithub/)",
+  "license": "MIT",
+  "homepage": "https://github.com/luban-dev/vite-plugun-sitemap",
+  "keywords": [
+    "sitemap",
+    "typescript"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts",
+    "release": "npm publish --access=public"
+  },
+  "peerDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/ejs": "^3.1.5",
+    "ejs": "^3.1.9"
+  },
+  "devDependencies": {
+    "@luban-ui/eslint-config": "^1.2.9",
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
