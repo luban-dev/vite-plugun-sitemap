@@ -43,7 +43,7 @@ export default defineConfig(() => {
         languages: ['zh-CN', 'en-US'],
         defaultLanguage: 'zh-CN',
         getLanguagePath: (page: string, lang: string) => `${lang}${page}`,
-        filename: (domain: string) => `sitemap.xml`;
+        filename: (domain: string) => `sitemap.xml`
       })
     ]
     // ...others
