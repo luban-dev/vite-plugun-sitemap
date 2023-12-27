@@ -29,10 +29,21 @@ export default defineConfig(() => {
     },
     plugins: [
       sitemap({
-        files: [
-          '**/*.module.scss'
+        domains: [
+          'www.test.com'
         ],
-        namedExports: true
+        pages: [
+          {
+            path: '/',
+            // languages: ['zh-CN', 'en-US'],
+            // defaultLanguage: 'zh-CN',
+            priority: 1.0
+          }
+        ],
+        languages: ['zh-CN', 'en-US'],
+        defaultLanguage: 'zh-CN',
+        getLanguagePath: (page: string, lang: string) => `${lang}${page}`,
+        filename: (domain: string) => `sitemap.xml`;
       })
     ]
     // ...others
