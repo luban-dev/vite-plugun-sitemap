@@ -33,12 +33,12 @@ const sitemapPlugin = (options: Options): Plugin => {
         languages: options.languages,
         defaultLanguage: options.defaultLanguage,
         getLanguagePath: options.getLanguagePath,
-        filename: (d) => {
+        filename: options.filename || ((d) => {
           if (options.domains.length > 1) {
-            return path.resolve(root, `${d}.sitemap.xml`);
+            return path.resolve(root, `public/${d}.sitemap.xml`);
           }
-          return path.resolve(root, `sitemap.xml`);
-        }
+          return path.resolve(root, `public/sitemap.xml`);
+        })
       });
       process.env.LUBAN_SITEMAP_PLUGIN_STARTED = 'true';
     },

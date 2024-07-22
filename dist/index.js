@@ -117,12 +117,12 @@ var sitemapPlugin = (options) => {
         languages: options.languages,
         defaultLanguage: options.defaultLanguage,
         getLanguagePath: options.getLanguagePath,
-        filename: (d) => {
+        filename: options.filename || ((d) => {
           if (options.domains.length > 1) {
-            return path2.resolve(root, `${d}.sitemap.xml`);
+            return path2.resolve(root, `public/${d}.sitemap.xml`);
           }
-          return path2.resolve(root, `sitemap.xml`);
-        }
+          return path2.resolve(root, `public/sitemap.xml`);
+        })
       });
       process.env.LUBAN_SITEMAP_PLUGIN_STARTED = "true";
     },
